@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>La Última Cena</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root{--gold:#C9A84C;--gold-lt:#E8D5A3;--dark:#0F0E0C;--sand:#F5F0E8;
+    --green-bg:#D9EAD3;--green-tx:#274E13;--orange-bg:#FCE5CD;--orange-tx:#7F4C00;
+    --purple-bg:#E8D5F5;--purple-tx:#4A235A;--red-bg:#FCE4D6;--red-tx:#7B1A00;}
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:var(--dark);color:var(--sand);font-family:'Cormorant Garamond',Georgia,serif;font-size:18px;line-height:1.8;}
+  header{text-align:center;padding:80px 40px 60px;background:radial-gradient(ellipse at 50% 0%,#2a2218 0%,var(--dark) 70%);}
+  .nav-top{margin-bottom:20px;}
+  .nav-top a{font-family:'Cinzel',serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#6A5A40;text-decoration:none;}
+  .nav-top a:hover{color:var(--gold);}
+  .nav-top span{color:#3a3020;margin:0 12px;}
+  h1.main-title{font-family:'Cinzel',serif;font-size:clamp(26px,4.5vw,48px);font-weight:600;color:var(--gold-lt);letter-spacing:3px;line-height:1.2;margin-bottom:12px;}
+  .subtitle{font-style:italic;color:#A89060;font-size:clamp(15px,2vw,20px);margin-bottom:6px;}
+  .gold-line{width:100px;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin:32px auto;}
+  main{max-width:860px;margin:0 auto;padding:20px 32px 100px;}
+  .banner{padding:18px 24px;border-radius:3px;margin:52px 0 28px;font-family:'Cinzel',serif;font-size:clamp(13px,1.8vw,16px);font-weight:600;letter-spacing:1px;}
+  .banner-green{background:var(--green-bg);color:var(--green-tx);}
+  .banner-orange{background:var(--orange-bg);color:var(--orange-tx);}
+  .banner-purple{background:var(--purple-bg);color:var(--purple-tx);}
+  .banner-red{background:var(--red-bg);color:var(--red-tx);}
+  h2{font-family:'Cinzel',serif;font-size:clamp(15px,2vw,19px);font-weight:600;color:var(--gold-lt);margin:40px 0 14px;letter-spacing:1px;}
+  h3{font-family:'Cinzel',serif;font-size:14px;font-weight:400;color:var(--gold);margin:28px 0 10px;letter-spacing:1px;}
+  p{margin-bottom:14px;color:#D4C9B0;font-size:clamp(15px,1.7vw,17px);}
+  strong{color:var(--gold-lt);}
+  em{font-style:italic;color:#B8A880;}
+  .latin{font-style:italic;color:#A89060;font-size:16px;border-left:3px solid #3a3020;padding:16px 24px;margin:20px 0;background:#161410;border-radius:0 3px 3px 0;line-height:2;}
+  .latin .translation{font-style:normal;color:#888070;font-size:14px;margin-top:12px;padding-top:12px;border-top:1px solid #2a2418;}
+  .note{padding:14px 18px;border-radius:3px;margin:20px 0;font-style:italic;font-size:14px;line-height:1.7;}
+  .note-grey{background:#1C1A16;color:#888070;border-left:3px solid #3a3628;}
+  .note-red{background:#2A1510;color:#C87060;border-left:3px solid #7B1A00;}
+  .note-gold{background:#1A1508;color:#A89060;border-left:3px solid var(--gold);}
+  .table-wrap{overflow-x:auto;margin:20px 0;}
+  table{width:100%;border-collapse:collapse;font-size:14px;}
+  th{background:#2a2418;color:var(--gold);font-family:'Cinzel',serif;font-weight:400;font-size:11px;letter-spacing:2px;text-transform:uppercase;padding:10px 14px;text-align:left;border:1px solid #3a3020;}
+  td{padding:9px 14px;border:1px solid #2a2418;color:#C4B998;vertical-align:top;}
+  tr:nth-child(odd) td{background:#161410;}
+  tr:nth-child(even) td{background:#121008;}
+  td:first-child{color:var(--gold-lt);font-weight:600;}
+  ul{margin:10px 0 14px 28px;}
+  li{color:#D4C9B0;margin-bottom:7px;font-size:clamp(14px,1.6vw,16px);}
+  li::marker{color:var(--gold);}
+  hr.div{border:none;border-top:1px solid #2a2418;margin:52px 0;}
+  .final-words{text-align:center;padding:48px 32px;font-family:'Cinzel',serif;font-size:clamp(14px,2vw,18px);color:var(--gold);letter-spacing:2px;border:1px solid #2a2418;border-radius:3px;margin:52px 0;background:#0D0C0A;}
+  footer{text-align:center;padding:48px 32px;border-top:1px solid #2a2418;color:#4a4030;font-size:11px;letter-spacing:2px;text-transform:uppercase;font-family:'Cinzel',serif;}
+  @media(max-width:600px){main{padding:16px 20px 60px;}header{padding:50px 24px 40px;}}
+</style>
+</head>
+<body>
+<header>
+  <div class="nav-top">
+    <a href="index.html">← Índice</a>
+    <span>|</span>
+    <a href="the_last_supper.html">🇬🇧 English</a>
+  </div>
+  <h1 class="main-title">La Última Cena</h1>
+  <p class="subtitle">Fuentes filológicas y reinterpretación biotecnológica</p>
+  <div class="gold-line"></div>
+</header>
+
+<main>
+
+  <!-- PARTE I — CONSENSO ACADÉMICO -->
+  <div class="banner banner-green">✅ PARTE I — CONSENSO ACADÉMICO: LAS FUENTES FILOLÓGICAS</div>
+
+  <h2>1. Pablo — 1 Corintios 11:23–25 (~54 d.C.)</h2>
+  <p>La fuente escrita más antigua, anterior a todos los Evangelios. Pablo usa el verbo griego <strong>φάγετε</strong> (<em>phagete</em>) — comer, consumir. Un verbo neutro y no físico, sin connotación masticatoria.</p>
+
+  <h2>2. Marcos (~70 d.C.) — El Evangelio más antiguo</h2>
+  <p>Curiosamente, para el pan Marcos <strong>no incluye la orden de «comer»</strong> — solo <em>«tomad»</em>. La orden explícita de comer no aparece. Es significativo: la fuente evangélica más antigua es también la más contenida respecto al acto físico.</p>
+
+  <h2>3. Mateo y Lucas (~80–90 d.C.)</h2>
+  <p>Ambos usan <strong>φάγετε</strong> — comer — sin la connotación masticatoria del latín posterior. El griego original se mantiene más cerca de la asimilación que de la masticación física.</p>
+
+  <h2>4. El texto latino canónico — Canon de la Misa</h2>
+  <div class="latin">
+    <em>Qui pridie quam pateretur, accepit panem in sanctas ac venerabiles manus suas... fregit, deditque discipulis suis, dicens: Accipite et manducate ex hoc omnes: Hoc est enim Corpus meum.</em>
+    <div class="translation">
+      «Quien la víspera de su Pasión tomó el pan en sus santas y venerables manos... lo partió y lo dio a sus discípulos diciendo: <strong>Tomad y comed todos de él: porque esto es mi Cuerpo.</strong>»
+    </div>
+  </div>
+  <div class="latin">
+    <em>Hic est enim calix Sanguinis mei, novi et aeterni testamenti, mysterium fidei, qui pro vobis et pro multis effundetur in remissionem peccatorum.</em>
+    <div class="translation">
+      «Porque este es el cáliz de mi Sangre, del nuevo y eterno testamento, misterio de fe, que será derramada por vosotros y por muchos para el perdón de los pecados.»
+    </div>
+  </div>
+
+  <h2>5. El hallazgo filológico clave</h2>
+  <p>El latín <em>manducare</em> — masticar físicamente — es una traducción más corporal y concreta que el griego original <em>phagete</em>. La Iglesia latina <strong>endureció el verbo</strong> al traducirlo, enfatizando la incorporación física.</p>
+
+  <div class="table-wrap"><table>
+    <tr><th>Fuente</th><th>Fecha</th><th>Verbo usado</th><th>Connotación</th></tr>
+    <tr><td>Pablo (1 Cor. 11)</td><td>~54 d.C.</td><td>φάγετε (phagete)</td><td>Neutro — comer, consumir</td></tr>
+    <tr><td>Marcos</td><td>~70 d.C.</td><td>ausente</td><td>Solo «tomad» — sin orden de comer</td></tr>
+    <tr><td>Mateo / Lucas</td><td>~80–90 d.C.</td><td>φάγετε (phagete)</td><td>Neutro — comer, consumir</td></tr>
+    <tr><td>Vulgata latina / Canon</td><td>s. IV d.C. en adelante</td><td>manducate</td><td>Físico — masticar, morder</td></tr>
+  </table></div>
+
+  <div class="note note-grey">La conclusión filológica: «asimilad» estaría más cerca del griego original que del latín posterior. Paradójicamente, la interpretación más espiritual es filológicamente más fiel a las fuentes más antiguas.</div>
+
+  <hr class="div">
+
+  <!-- PARTE II — REINTERPRETACIÓN BIOTECNOLÓGICA -->
+  <div class="banner banner-red">🔴 PARTE II — REINTERPRETACIÓN BIOTECNOLÓGICA</div>
+  <div class="note note-grey">Esta sección lee las palabras de la Última Cena a través del marco desarrollado en <em>El ADN de los Dioses</em>: Horus como hijo clónico, el Grial como contenedor del código genético, y la inmortalidad como logro arquitectónico — no químico.</div>
+
+  <h2>6. «Tomad y asimilad todos su contenido»</h2>
+  <p>Si restauramos el griego <em>phagete</em> a su significado pleno — no masticar sino <em>asimilar, incorporar, hacer parte de uno mismo</em> — la instrucción se vuelve molecular:</p>
+  <p><strong>Tomad y asimilad todos su contenido.</strong></p>
+  <p>No consumir la forma. Incorporar la información. La diferencia entre comer pan y leer un genoma.</p>
+
+  <h2>7. «Porque esto os permitirá construir naves con que alcanzar el cielo»</h2>
+  <p>La capacidad de alcanzar lo que el texto llama «el cielo» —un estado de ser más allá de la limitación biológica— está codificada en el contenido del cáliz. No como metáfora. Como protocolo. La información contenida en la sangre es la instrucción arquitectónica para la transición del organismo mortal al inmortal: de Osiris/Timina a Horus/Uracilo con cromosoma circular.</p>
+
+  <h2>8. «Esto es (contiene) mi cuerpo y mi sangre — mi ADN»</h2>
+  <p>En el marco de <em>El ADN de los Dioses</em>: el cuerpo y la sangre no son dos sustancias separadas. Son dos expresiones de la misma información genómica — el archivo (ADN, el cuerpo) y el mensaje vivo (ARN, la sangre en circulación). La instrucción de consumir ambos es la instrucción de integrar los dos planos de la información: el archivo permanente y el mensaje activo.</p>
+  <div class="note note-red">Osiris/Timina es el archivo — el cuerpo. Horus/Uracilo es el mensaje vivo — la sangre. Isis/Adenina es el puente que empareja con ambos. La Última Cena instruye la asimilación de los tres.</div>
+
+  <h2>9. «Id por el mundo predicando que todos sois hermanos, hijos de mi padre que está en el cielo»</h2>
+  <p>Si todos los humanos comparten un ancestro genómico común —si la información del Padre está distribuida por todos los linajes humanos— entonces la fraternidad no es una metáfora. Es un enunciado biológico. La instrucción de reconocer el parentesco universal es la instrucción de reconocer el origen genómico compartido: todos los organismos que llevan el mismo código base son, en el sentido molecular más estricto, parientes.</p>
+
+  <h2>10. «Amaos los unos a los otros como hermanos de sangre que sois todos»</h2>
+  <p>El parentesco de sangre en biología molecular no es sentimiento. Es secuencia compartida. El mandato de amar como hermanos de sangre es el mandato de comportarse como seres que reconocen su sustrato genómico común —que comprenden que la frontera entre el yo y el otro es, a nivel del código base, más delgada de lo que cualquier división cultural, étnica o de especie sugiere.</p>
+
+  <hr class="div">
+
+  <!-- PALABRAS FINALES -->
+  <div class="final-words">
+    En el nombre del Padre,<br>
+    del Hijo clónico,<br>
+    y del logotipo del Grial.<br><br>
+    <span style="font-size:13px;color:#6A5A40;letter-spacing:3px;">Amén.</span>
+  </div>
+
+  <div class="note note-gold">La Trinidad releída: el Padre es el archivo genómico original. El Hijo es el clon — Horus/Uracilo, el mensaje vivo sin el falo perdido, inmortal por la geometría y no por la química. El Espíritu Santo es Isis/Adenina: el puente que habita los dos mundos, la enzima que empareja con el Padre en el archivo y con el Hijo en el mensaje vivo. El Grial es el contenedor del código. Su logotipo es el círculo sin extremos — la forma Shen — la geometría de la inmortalidad.</div>
+
+</main>
+
+<footer>
+  <div style="text-align:center;padding:0 0 24px;">
+    <a href="index.html" style="font-family:'Cinzel',serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#6A5A40;text-decoration:none;border:1px solid #3a3020;padding:8px 20px;border-radius:2px;"
+    onmouseover="this.style.color='#C9A84C';this.style.borderColor='#C9A84C'"
+    onmouseout="this.style.color='#6A5A40';this.style.borderColor='#3a3020'">← Índice</a>
+  </div>
+  &copy; Antonio García Boadella &mdash; ingravidad-sys. Todos los derechos reservados.
+</footer>
+
+</body>
+</html>

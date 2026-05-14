@@ -7,8 +7,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;600&display=swap" rel="stylesheet">
 <style>
   :root{--gold:#C9A84C;--gold-lt:#E8D5A3;--dark:#0F0E0C;--sand:#F5F0E8;
-    --green-bg:#D9EAD3;--green-tx:#274E13;--orange-bg:#FCE5CD;--orange-tx:#7F4C00;
-    --purple-bg:#E8D5F5;--purple-tx:#4A235A;--red-bg:#FCE4D6;--red-tx:#7B1A00;}
+    --green-bg:#D9EAD3;--green-tx:#274E13;--red-bg:#FCE4D6;--red-tx:#7B1A00;
+    --blue-bg:#CFE2F3;--blue-tx:#0D3A5C;}
   *{box-sizing:border-box;margin:0;padding:0;}
   body{background:var(--dark);color:var(--sand);font-family:'Cormorant Garamond',Georgia,serif;font-size:18px;line-height:1.8;}
   header{text-align:center;padding:80px 40px 60px;background:radial-gradient(ellipse at 50% 0%,#2a2218 0%,var(--dark) 70%);}
@@ -22,11 +22,9 @@
   main{max-width:860px;margin:0 auto;padding:20px 32px 100px;}
   .banner{padding:18px 24px;border-radius:3px;margin:52px 0 28px;font-family:'Cinzel',serif;font-size:clamp(13px,1.8vw,16px);font-weight:600;letter-spacing:1px;}
   .banner-green{background:var(--green-bg);color:var(--green-tx);}
-  .banner-orange{background:var(--orange-bg);color:var(--orange-tx);}
-  .banner-purple{background:var(--purple-bg);color:var(--purple-tx);}
   .banner-red{background:var(--red-bg);color:var(--red-tx);}
+  .banner-blue{background:var(--blue-bg);color:var(--blue-tx);}
   h2{font-family:'Cinzel',serif;font-size:clamp(15px,2vw,19px);font-weight:600;color:var(--gold-lt);margin:40px 0 14px;letter-spacing:1px;}
-  h3{font-family:'Cinzel',serif;font-size:14px;font-weight:400;color:var(--gold);margin:28px 0 10px;letter-spacing:1px;}
   p{margin-bottom:14px;color:#D4C9B0;font-size:clamp(15px,1.7vw,17px);}
   strong{color:var(--gold-lt);}
   em{font-style:italic;color:#B8A880;}
@@ -36,6 +34,19 @@
   .note-grey{background:#1C1A16;color:#888070;border-left:3px solid #3a3628;}
   .note-red{background:#2A1510;color:#C87060;border-left:3px solid #7B1A00;}
   .note-gold{background:#1A1508;color:#A89060;border-left:3px solid var(--gold);}
+  .note-blue{background:#0D1820;color:#6090C0;border-left:3px solid #0D3A5C;}
+  .pda-box{border:1px solid var(--gold);border-radius:4px;padding:36px 40px;margin:40px 0;background:#0A0908;}
+  .pda-label{font-family:'Cinzel',serif;font-size:10px;letter-spacing:5px;color:#6A5A40;text-transform:uppercase;margin-bottom:28px;display:block;text-align:center;}
+  .pda-item{border-top:1px solid #2a2418;padding:18px 0;display:grid;grid-template-columns:140px 1fr;gap:16px;}
+  .pda-key{font-family:'Cinzel',serif;font-size:11px;letter-spacing:2px;color:#6A5A40;text-transform:uppercase;padding-top:2px;}
+  .pda-val{color:var(--gold-lt);font-size:16px;line-height:1.6;}
+  .pda-val em{color:#888070;font-size:14px;display:block;margin-top:4px;}
+  .trinity{border:1px solid #2a2418;border-radius:4px;margin:40px 0;overflow:hidden;}
+  .trinity-row{display:grid;grid-template-columns:160px 1fr;border-bottom:1px solid #1a1810;}
+  .trinity-row:last-child{border-bottom:none;}
+  .trinity-name{background:#161410;padding:24px 20px;font-family:'Cinzel',serif;font-size:13px;color:var(--gold);letter-spacing:1px;display:flex;align-items:center;}
+  .trinity-desc{padding:20px 24px;color:#C4B998;font-size:15px;line-height:1.7;}
+  .trinity-desc strong{color:var(--gold-lt);}
   .table-wrap{overflow-x:auto;margin:20px 0;}
   table{width:100%;border-collapse:collapse;font-size:14px;}
   th{background:#2a2418;color:var(--gold);font-family:'Cinzel',serif;font-weight:400;font-size:11px;letter-spacing:2px;text-transform:uppercase;padding:10px 14px;text-align:left;border:1px solid #3a3020;}
@@ -43,114 +54,165 @@
   tr:nth-child(odd) td{background:#161410;}
   tr:nth-child(even) td{background:#121008;}
   td:first-child{color:var(--gold-lt);font-weight:600;}
-  ul{margin:10px 0 14px 28px;}
-  li{color:#D4C9B0;margin-bottom:7px;font-size:clamp(14px,1.6vw,16px);}
-  li::marker{color:var(--gold);}
   hr.div{border:none;border-top:1px solid #2a2418;margin:52px 0;}
-  .final-words{text-align:center;padding:48px 32px;font-family:'Cinzel',serif;font-size:clamp(14px,2vw,18px);color:var(--gold);letter-spacing:2px;border:1px solid #2a2418;border-radius:3px;margin:52px 0;background:#0D0C0A;}
+  .final-words{text-align:center;padding:48px 32px;font-family:'Cinzel',serif;font-size:clamp(15px,2.2vw,20px);color:var(--gold);letter-spacing:3px;border:1px solid #2a2418;border-radius:3px;margin:52px 0;background:#0D0C0A;line-height:2.4;}
   footer{text-align:center;padding:48px 32px;border-top:1px solid #2a2418;color:#4a4030;font-size:11px;letter-spacing:2px;text-transform:uppercase;font-family:'Cinzel',serif;}
-  @media(max-width:600px){main{padding:16px 20px 60px;}header{padding:50px 24px 40px;}}
+  @media(max-width:600px){main{padding:16px 20px 60px;}header{padding:50px 24px 40px;}.pda-item,.trinity-row{grid-template-columns:1fr;}.trinity-name{border-bottom:1px solid #1a1810;}}
 </style>
 </head>
 <body>
 <header>
   <div class="nav-top">
-    <a href="index.html">← Índice</a>
+    <a href="index.html">&larr; &Iacute;ndice</a>
     <span>|</span>
-    <a href="the_last_supper.html">🇬🇧 English</a>
+    <a href="the_last_supper.html">&#127468;&#127463; English</a>
   </div>
-  <h1 class="main-title">La Última Cena</h1>
-  <p class="subtitle">Fuentes filológicas y reinterpretación biotecnológica</p>
+  <h1 class="main-title">La &Uacute;ltima Cena</h1>
+  <p class="subtitle">La hostia como dispositivo alienígena de almacenamiento de datos</p>
   <div class="gold-line"></div>
 </header>
 
 <main>
 
-  <!-- PARTE I — CONSENSO ACADÉMICO -->
-  <div class="banner banner-green">✅ PARTE I — CONSENSO ACADÉMICO: LAS FUENTES FILOLÓGICAS</div>
-
-  <h2>1. Pablo — 1 Corintios 11:23–25 (~54 d.C.)</h2>
-  <p>La fuente escrita más antigua, anterior a todos los Evangelios. Pablo usa el verbo griego <strong>φάγετε</strong> (<em>phagete</em>) — comer, consumir. Un verbo neutro y no físico, sin connotación masticatoria.</p>
-
-  <h2>2. Marcos (~70 d.C.) — El Evangelio más antiguo</h2>
-  <p>Curiosamente, para el pan Marcos <strong>no incluye la orden de «comer»</strong> — solo <em>«tomad»</em>. La orden explícita de comer no aparece. Es significativo: la fuente evangélica más antigua es también la más contenida respecto al acto físico.</p>
-
-  <h2>3. Mateo y Lucas (~80–90 d.C.)</h2>
-  <p>Ambos usan <strong>φάγετε</strong> — comer — sin la connotación masticatoria del latín posterior. El griego original se mantiene más cerca de la asimilación que de la masticación física.</p>
-
-  <h2>4. El texto latino canónico — Canon de la Misa</h2>
-  <div class="latin">
-    <em>Qui pridie quam pateretur, accepit panem in sanctas ac venerabiles manus suas... fregit, deditque discipulis suis, dicens: Accipite et manducate ex hoc omnes: Hoc est enim Corpus meum.</em>
-    <div class="translation">
-      «Quien la víspera de su Pasión tomó el pan en sus santas y venerables manos... lo partió y lo dio a sus discípulos diciendo: <strong>Tomad y comed todos de él: porque esto es mi Cuerpo.</strong>»
+  <!-- FICHA DEL DISPOSITIVO -->
+  <div class="pda-box">
+    <span class="pda-label">Especificaciones del dispositivo &mdash; La Hostia</span>
+    <div class="pda-item">
+      <div class="pda-key">Formato</div>
+      <div class="pda-val">Dispositivo de datos personal de origen no humano
+        <em>Soporte de almacenamiento comprimido &mdash; contiene la totalidad de la información divina</em>
+      </div>
+    </div>
+    <div class="pda-item">
+      <div class="pda-key">Contenido 01</div>
+      <div class="pda-val">La biolog&iacute;a de Dios &mdash; su ADN
+        <em>Cuerpo y sangre &bull; El genoma inmortal completo &bull; La vida eterna codificada en la secuencia</em>
+      </div>
+    </div>
+    <div class="pda-item">
+      <div class="pda-key">Contenido 02</div>
+      <div class="pda-val">Planos de naves espaciales
+        <em>Especificaciones técnicas para construir naves capaces de alcanzar el cielo &bull; Reencuentro con el Padre biológico</em>
+      </div>
+    </div>
+    <div class="pda-item">
+      <div class="pda-key">Contenido 03</div>
+      <div class="pda-val">Ciencia Infusa &mdash; El saber alienígena completo
+        <em>El conocimiento total de una civilización avanzada, comprimido &bull; Sin necesidad de estudio &bull; Asimilación directa</em>
+      </div>
+    </div>
+    <div class="pda-item">
+      <div class="pda-key">Fabricante</div>
+      <div class="pda-val">Civilización avanzada desconocida
+        <em>Logo: el Espíritu Santo &bull; Marca del constructor grabada en el dispositivo</em>
+      </div>
+    </div>
+    <div class="pda-item">
+      <div class="pda-key">Protocolo</div>
+      <div class="pda-val">Tomad y asimilad &mdash; incorporad la información, no consumáis la forma
+        <em>Griego phagete &bull; No latín manducare</em>
+      </div>
     </div>
   </div>
-  <div class="latin">
-    <em>Hic est enim calix Sanguinis mei, novi et aeterni testamenti, mysterium fidei, qui pro vobis et pro multis effundetur in remissionem peccatorum.</em>
-    <div class="translation">
-      «Porque este es el cáliz de mi Sangre, del nuevo y eterno testamento, misterio de fe, que será derramada por vosotros y por muchos para el perdón de los pecados.»
-    </div>
-  </div>
-
-  <h2>5. El hallazgo filológico clave</h2>
-  <p>El latín <em>manducare</em> — masticar físicamente — es una traducción más corporal y concreta que el griego original <em>phagete</em>. La Iglesia latina <strong>endureció el verbo</strong> al traducirlo, enfatizando la incorporación física.</p>
-
-  <div class="table-wrap"><table>
-    <tr><th>Fuente</th><th>Fecha</th><th>Verbo usado</th><th>Connotación</th></tr>
-    <tr><td>Pablo (1 Cor. 11)</td><td>~54 d.C.</td><td>φάγετε (phagete)</td><td>Neutro — comer, consumir</td></tr>
-    <tr><td>Marcos</td><td>~70 d.C.</td><td>ausente</td><td>Solo «tomad» — sin orden de comer</td></tr>
-    <tr><td>Mateo / Lucas</td><td>~80–90 d.C.</td><td>φάγετε (phagete)</td><td>Neutro — comer, consumir</td></tr>
-    <tr><td>Vulgata latina / Canon</td><td>s. IV d.C. en adelante</td><td>manducate</td><td>Físico — masticar, morder</td></tr>
-  </table></div>
-
-  <div class="note note-grey">La conclusión filológica: «asimilad» estaría más cerca del griego original que del latín posterior. Paradójicamente, la interpretación más espiritual es filológicamente más fiel a las fuentes más antiguas.</div>
 
   <hr class="div">
 
-  <!-- PARTE II — REINTERPRETACIÓN BIOTECNOLÓGICA -->
-  <div class="banner banner-red">🔴 PARTE II — REINTERPRETACIÓN BIOTECNOLÓGICA</div>
-  <div class="note note-grey">Esta sección lee las palabras de la Última Cena a través del marco desarrollado en <em>El ADN de los Dioses</em>: Horus como hijo clónico, el Grial como contenedor del código genético, y la inmortalidad como logro arquitectónico — no químico.</div>
+  <!-- PARTE I — EL VERBO -->
+  <div class="banner banner-green">&#x2705; PARTE I &mdash; LA CLAVE FILOLÓGICA: EL VERBO QUE CAMBIARON</div>
 
-  <h2>6. «Tomad y asimilad todos su contenido»</h2>
-  <p>Si restauramos el griego <em>phagete</em> a su significado pleno — no masticar sino <em>asimilar, incorporar, hacer parte de uno mismo</em> — la instrucción se vuelve molecular:</p>
-  <p><strong>Tomad y asimilad todos su contenido.</strong></p>
-  <p>No consumir la forma. Incorporar la información. La diferencia entre comer pan y leer un genoma.</p>
+  <h2>La instrucción que fue endurecida</h2>
+  <p>La fuente escrita más antigua de la Última Cena es la Primera Carta de Pablo a los Corintios (~54 d.C.), anterior a todos los Evangelios. Pablo usa el griego <strong>&phi;&alpha;&gamma;&epsilon;&tau;&epsilon;</strong> (<em>phagete</em>): comer, incorporar, hacer parte de uno mismo. Un verbo de asimilación, no de masticación. El Evangelio de Marcos (~70 d.C.), el más antiguo, es aún más contenido: para el pan no da ninguna orden de comer &mdash; solo <em>&laquo;tomad&raquo;</em>. Mateo y Lucas (~80&ndash;90 d.C.) restauran <em>phagete</em> &mdash; todavía neutro, todavía no físico.</p>
+  <p>Entonces el Canon latino cristaliza la tradición &mdash; y cambia el verbo:</p>
 
-  <h2>7. «Porque esto os permitirá construir naves con que alcanzar el cielo»</h2>
-  <p>La capacidad de alcanzar lo que el texto llama «el cielo» —un estado de ser más allá de la limitación biológica— está codificada en el contenido del cáliz. No como metáfora. Como protocolo. La información contenida en la sangre es la instrucción arquitectónica para la transición del organismo mortal al inmortal: de Osiris/Timina a Horus/Uracilo con cromosoma circular.</p>
+  <div class="latin">
+    <em>Accipite et manducate ex hoc omnes: Hoc est enim Corpus meum.</em>
+    <div class="translation">&laquo;Tomad y <strong>masticad</strong> todos de él: porque esto es mi Cuerpo.&raquo;</div>
+  </div>
+  <div class="latin">
+    <em>Hic est enim calix Sanguinis mei, novi et aeterni testamenti, mysterium fidei, qui pro vobis et pro multis effundetur in remissionem peccatorum.</em>
+    <div class="translation">&laquo;Porque este es el cáliz de mi Sangre, del nuevo y eterno testamento, misterio de fe, que será derramada por vosotros y por muchos para el perdón de los pecados.&raquo;</div>
+  </div>
 
-  <h2>8. «Esto es (contiene) mi cuerpo y mi sangre — mi ADN»</h2>
-  <p>En el marco de <em>El ADN de los Dioses</em>: el cuerpo y la sangre no son dos sustancias separadas. Son dos expresiones de la misma información genómica — el archivo (ADN, el cuerpo) y el mensaje vivo (ARN, la sangre en circulación). La instrucción de consumir ambos es la instrucción de integrar los dos planos de la información: el archivo permanente y el mensaje activo.</p>
-  <div class="note note-red">Osiris/Timina es el archivo — el cuerpo. Horus/Uracilo es el mensaje vivo — la sangre. Isis/Adenina es el puente que empareja con ambos. La Última Cena instruye la asimilación de los tres.</div>
+  <div class="table-wrap"><table>
+    <tr><th>Fuente</th><th>Fecha</th><th>Verbo</th><th>Significado</th></tr>
+    <tr><td>Pablo (1 Cor. 11)</td><td>~54 d.C.</td><td>&phi;&alpha;&gamma;&epsilon;&tau;&epsilon; phagete</td><td>Asimilar &bull; incorporar &bull; hacer propio</td></tr>
+    <tr><td>Marcos</td><td>~70 d.C.</td><td>ausente</td><td>Solo &laquo;tomad&raquo;</td></tr>
+    <tr><td>Mateo / Lucas</td><td>~80&ndash;90 d.C.</td><td>&phi;&alpha;&gamma;&epsilon;&tau;&epsilon; phagete</td><td>Asimilar &bull; neutro &bull; no físico</td></tr>
+    <tr><td>Canon latino</td><td>s. IV d.C. en adelante</td><td>manducate</td><td>Masticar físicamente</td></tr>
+  </table></div>
 
-  <h2>9. «Id por el mundo predicando que todos sois hermanos, hijos de mi padre que está en el cielo»</h2>
-  <p>Si todos los humanos comparten un ancestro genómico común —si la información del Padre está distribuida por todos los linajes humanos— entonces la fraternidad no es una metáfora. Es un enunciado biológico. La instrucción de reconocer el parentesco universal es la instrucción de reconocer el origen genómico compartido: todos los organismos que llevan el mismo código base son, en el sentido molecular más estricto, parientes.</p>
+  <div class="note note-grey">La conclusión filológica: &laquo;asimilad&raquo; está más cerca del griego original que el latín posterior. La interpretación técnicamente más precisa es también la más antigua: un dispositivo de datos no se mastica. Se asimila su contenido.</div>
 
-  <h2>10. «Amaos los unos a los otros como hermanos de sangre que sois todos»</h2>
-  <p>El parentesco de sangre en biología molecular no es sentimiento. Es secuencia compartida. El mandato de amar como hermanos de sangre es el mandato de comportarse como seres que reconocen su sustrato genómico común —que comprenden que la frontera entre el yo y el otro es, a nivel del código base, más delgada de lo que cualquier división cultural, étnica o de especie sugiere.</p>
+  <hr class="div">
+
+  <!-- PARTE II — CONTENIDOS -->
+  <div class="banner banner-red">&#x1F534; PARTE II &mdash; LOS TRES CONTENIDOS DEL DISPOSITIVO</div>
+
+  <h2>1. La biología de Dios &mdash; El ADN inmortal &mdash; La vida eterna</h2>
+  <p>El cuerpo y la sangre no son dos sustancias separadas. Son dos expresiones de la misma información genómica: el <strong>cuerpo</strong> es el archivo &mdash; la secuencia de ADN permanente, Osiris/Timina en la doble hélice. La <strong>sangre</strong> es el mensaje activo &mdash; el ARN en circulación, Horus/Uracilo expresado en el organismo vivo.</p>
+  <p>Juntos constituyen el genoma completo de Dios: un <strong>genoma inmortal con cromosomas circulares</strong>. Sin telómeros. Sin senescencia replicativa. Sin cuenta atrás. La forma Shen &mdash; el círculo sin extremos. Quien lo asimila recibe la instrucción arquitectónica para la transición del organismo mortal al inmortal. De Osiris a Horus.</p>
+  <div class="note note-red">La vida eterna no es una promesa. Es un código. La hostia contiene la secuencia. La asimilación es el protocolo. La inmortalidad de Horus &mdash; Uracilo con cromosoma circular &mdash; es el contenido biológico de la Eucaristía.</div>
+
+  <h2>2. Planos de naves espaciales &mdash; Para alcanzar al Padre biológico</h2>
+  <p>El cielo no es una metáfora. Es un destino. El Padre biológico se encuentra en un punto específico más allá del alcance humano actual. El dispositivo contiene las especificaciones técnicas &mdash; los planos de ingeniería &mdash; para construir las naves capaces de completar ese viaje.</p>
+  <p>&laquo;Id por el mundo predicando que todos sois hermanos, hijos de mi Padre que está en el cielo&raquo; no es solo un mandato moral. Es el anuncio de un destino compartido, de un origen biológico común y, implícitamente, de la existencia de una ruta y los medios para recorrerla. La tecnología está en el dispositivo. La asimilación entrega los planos.</p>
+  <div class="note note-blue">Los Vigilantes transmitieron conocimiento de navegación celeste parcial, desde fuera del canal autorizado. La hostia es la transmisión completa y directa desde la fuente &mdash; no fragmentos filtrados sino el paquete técnico completo.</div>
+
+  <h2>3. Ciencia Infusa &mdash; El saber completo de una civilización avanzada</h2>
+  <p>El tercer contenido es la totalidad del conocimiento de la civilización que creó el dispositivo: comprimido, completo y entregado sin necesidad de estudio, aprendizaje ni años de experiencia. Asimilación directa. Esta es la <em>Scientia Infusa</em> en su forma legítima y autorizada.</p>
+  <p>Los Vigilantes dieron ciencia infusa ilegítimamente: fragmentada, corrompida, sin el marco moral ni la arquitectura completa. El caos de los Nephilim fue el resultado de una descarga parcial sin documentación. La hostia entrega el paquete completo &mdash; con el logo del fabricante adjunto.</p>
+
+  <hr class="div">
+
+  <!-- PARTE III — LA TRINIDAD -->
+  <div class="banner banner-blue">&#x1F535; PARTE III &mdash; LA TRINIDAD: DOCUMENTACIÓN DEL FABRICANTE</div>
+
+  <p>Todo dispositivo tecnológico avanzado lleva tres marcas identificadoras: quién lo encargó, qué contiene y quién lo construyó. La Trinidad es la documentación completa de la hostia.</p>
+
+  <div class="trinity">
+    <div class="trinity-row">
+      <div class="trinity-name">El Padre</div>
+      <div class="trinity-desc">
+        <strong>El progenitor biológico alienígena.</strong> La fuente del genoma contenido en el dispositivo. El destino del viaje cuyos planos están codificados en él. No un creador abstracto sino una entidad biológica específica &mdash; la que envió el dispositivo, que comparte ADN con el Hijo, y a quien la instrucción &laquo;volver al Padre&raquo; se refiere como una dirección literal en el espacio.
+      </div>
+    </div>
+    <div class="trinity-row">
+      <div class="trinity-name">El Hijo</div>
+      <div class="trinity-desc">
+        <strong>El genoma inmortal clónico &mdash; Horus/Uracilo.</strong> El contenido biológico del dispositivo. La información genómica completa del Padre codificada en la hostia &mdash; inmortal porque tiene cromosomas circulares, la forma Shen, sin telómeros, sin cuenta atrás. El Hijo no es separado del genoma del Padre: es su versión viva, activa y expresable. Uracilo al Timina. Horus al Osiris. El mensaje al archivo. La sangre al cuerpo.
+      </div>
+    </div>
+    <div class="trinity-row">
+      <div class="trinity-name">El Esp&iacute;ritu Santo</div>
+      <div class="trinity-desc">
+        <strong>El logo del constructor del artilugio.</strong> No una presencia, no una fuerza, no una entidad metafísica. La firma identificadora de la civilización que diseñó y construyó la hostia &mdash; la marca grabada en el dispositivo. Todo objeto tecnológico avanzado lleva la marca de su fabricante. El Espíritu Santo es esa marca: prueba de origen, certificado de autenticidad y el nombre de la inteligencia que ingenió el genoma inmortal, los planos de las naves y la ciencia infusa en un único soporte comprimido y lo entregó en la Tierra hace dos mil años.
+      </div>
+    </div>
+  </div>
+
+  <div class="note note-gold">El Grial es el contenedor original del dispositivo. Su logotipo es el círculo sin extremos &mdash; la forma Shen &mdash; la firma geométrica de la inmortalidad. La misma marca que Isis usó para sellar el cromosoma circular de Horus. La misma marca en los cartuchos de los faraones. El logo del constructor es la geometría de la vida eterna.</div>
 
   <hr class="div">
 
   <!-- PALABRAS FINALES -->
   <div class="final-words">
-    En el nombre del Padre,<br>
-    del Hijo clónico,<br>
-    y del logotipo del Grial.<br><br>
-    <span style="font-size:13px;color:#6A5A40;letter-spacing:3px;">Amén.</span>
+    En el nombre del Padre<br>
+    <span style="font-size:13px;color:#6A5A40;letter-spacing:2px;">&mdash; el progenitor biológico alienígena &mdash;</span><br><br>
+    del Hijo clónico<br>
+    <span style="font-size:13px;color:#6A5A40;letter-spacing:2px;">&mdash; el genoma inmortal / Horus / Uracilo &mdash;</span><br><br>
+    y del Espíritu Santo<br>
+    <span style="font-size:13px;color:#6A5A40;letter-spacing:2px;">&mdash; el logo del constructor del artilugio &mdash;</span><br><br>
+    <span style="font-size:12px;color:#4a4030;letter-spacing:4px;">Amén.</span>
   </div>
 
-  <div class="note note-gold">La Trinidad releída: el Padre es el archivo genómico original. El Hijo es el clon — Horus/Uracilo, el mensaje vivo sin el falo perdido, inmortal por la geometría y no por la química. El Espíritu Santo es Isis/Adenina: el puente que habita los dos mundos, la enzima que empareja con el Padre en el archivo y con el Hijo en el mensaje vivo. El Grial es el contenedor del código. Su logotipo es el círculo sin extremos — la forma Shen — la geometría de la inmortalidad.</div>
-
 </main>
-
 <footer>
   <div style="text-align:center;padding:0 0 24px;">
     <a href="index.html" style="font-family:'Cinzel',serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#6A5A40;text-decoration:none;border:1px solid #3a3020;padding:8px 20px;border-radius:2px;"
     onmouseover="this.style.color='#C9A84C';this.style.borderColor='#C9A84C'"
-    onmouseout="this.style.color='#6A5A40';this.style.borderColor='#3a3020'">← Índice</a>
+    onmouseout="this.style.color='#6A5A40';this.style.borderColor='#3a3020'">&larr; &Iacute;ndice</a>
   </div>
-  &copy; Antonio García Boadella &mdash; ingravidad-sys. Todos los derechos reservados.
+  &copy; Antonio Garc&iacute;a Boadella &mdash; ingravidad-sys. Todos los derechos reservados.
 </footer>
-
 </body>
 </html>
